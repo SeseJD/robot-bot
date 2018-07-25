@@ -26,7 +26,7 @@ async def on_message(message):
 
 @_client.command()
 async def clear(context, amount=100):
-  if context.message.author.id == admin:
+  if context.message.author.id == '422126708003438592':
     msgs = []
     async for msg in _client.logs_from(context.message.channel, limit = int(amount) + 1):
       msgs.append(msg)
