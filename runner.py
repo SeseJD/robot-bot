@@ -26,7 +26,7 @@ client.command(pass_context = True)
 async def clear(context, ammount=100):
   roles = context.author.roles
   async for role in roles:
-    if role.name = 'Server Moderators' or role.name = 'Server Administrators':
+    if role.id = 471184662119710720:
       msgs = []
       async for msg in _client.logs_from(context.message.channel, limit = amount):
         msgs.append(msg)
