@@ -27,11 +27,10 @@ async def on_message(message):
     
 client.command(pass_context = True)
 async def clear(context, ammount=100):
-  if admin = message.author.id:
+  if admin = context.message.author.id:
     msgs = []
     async for msg in _client.logs_from(context.message.channel, limit = amount):
       msgs.append(msg)
     await _client.delete_messages(msgs)
-    ms = await _client.say(':ok_hand: deleted messages for ya')
     
 client.run(os.getenv('BOT_TOKEN'))
