@@ -20,9 +20,6 @@ async def on_message(message):
     await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. Cheers to him!')
   if message.content.startswith(';channelinfo'):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
-  
-  if admin = message.author.id:
-    if message.content.startswith(';kick'):
       
     
 client.command(pass_context = True)
