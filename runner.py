@@ -22,11 +22,11 @@ async def on_message(message):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
       
 
-_client.command()
-async def clear(context, ammount=100):
+@_client.command()
+async def clear(context, amount=100):
   if context.message.author.id == admin:
     msgs = []
-    async for msg in _client.logs_from(context.message.channel, limit = amount):
+    async for msg in _client.logs_from(context.message.channel, limit = int(amount) + 1):
       msgs.append(msg)
     await _client.delete_messages(msgs)
     
