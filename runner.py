@@ -17,4 +17,4 @@ async def on_message(message):
   if message.content.startswith(';channelinfo'):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
     
-client.run('token')
+client.run('BOT_TOKEN')
