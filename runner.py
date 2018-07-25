@@ -10,12 +10,12 @@ _client = commands.Bot(command_prefix = ';')
 
 admin = 422126708003438592
 
-@_client.event
+@client.event
 async def on_ready():
   print('Bot ready!')
 
 
-@_client.event
+@client.event
 async def on_message(message):
   if message.content.startswith(';owner'):
     await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. Cheers to him!')
@@ -23,4 +23,4 @@ async def on_message(message):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
 
 
-_client.run(os.getenv('BOT_TOKEN'))
+client.run(os.getenv('BOT_TOKEN'))
