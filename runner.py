@@ -24,9 +24,9 @@ async def on_message(message):
 
 client.command(pass_context = True)
 async def clear(context, ammount=100):
-  roles = context.author.roles
-  async for role in roles:
-    if role.id = admin:
+  perms = context.message.channel.permissions_for(context.message.author)
+  async for perm in perms:
+    if perm = 11:
       msgs = []
       async for msg in _client.logs_from(context.message.channel, limit = amount):
         msgs.append(msg)
