@@ -21,13 +21,15 @@ async def on_message(message):
   if message.content.startswith(';channelinfo'):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
       
-    
+
 client.command(pass_context = True)
 async def clear(context, ammount=100):
-  if admin = context.message.author.id:
-    msgs = []
-    async for msg in _client.logs_from(context.message.channel, limit = amount):
-      msgs.append(msg)
-    await _client.delete_messages(msgs)
+  roles = context.author.roles
+  async for role in roles:
+    if role.name = 'Server Moderators' or role.name = 'Server Administrators':
+      msgs = []
+      async for msg in _client.logs_from(context.message.channel, limit = amount):
+        msgs.append(msg)
+      await _client.delete_messages(msgs)
     
 client.run(os.getenv('BOT_TOKEN'))
