@@ -3,6 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 
 import asyncio
+import os
 
 client = discord.Client()
 
@@ -17,4 +18,4 @@ async def on_message(message):
   if message.content.startswith(';channelinfo'):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
     
-client.run('BOT_TOKEN')
+client.run(os.getenv('BOT_TOKEN'))
