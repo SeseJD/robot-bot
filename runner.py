@@ -24,12 +24,10 @@ async def on_message(message):
 
 client.command(pass_context = True)
 async def clear(context, ammount=100):
-  perms = context.message.channel.permissions_for(context.message.author)
-  async for perm in perms:
-    if perm = 11:
-      msgs = []
-      async for msg in _client.logs_from(context.message.channel, limit = amount):
-        msgs.append(msg)
-      await _client.delete_messages(msgs)
+  if context.message.author.id == '422126708003438592':
+    msgs = []
+    async for msg in _client.logs_from(context.message.channel, limit = amount):
+      msgs.append(msg)
+    await _client.delete_messages(msgs)
     
 client.run(os.getenv('BOT_TOKEN'))
