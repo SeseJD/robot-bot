@@ -8,7 +8,7 @@ import os
 client = discord.Client()
 _client = commands.Bot(command_prefix = ';')
 
-admin = 471184662119710720
+admin = 422126708003438592
 
 @client.event
 async def on_ready():
@@ -24,7 +24,7 @@ async def on_message(message):
 
 _client.command()
 async def clear(context, ammount=100):
-  if context.message.author.id == '422126708003438592':
+  if context.message.author.id == admin:
     msgs = []
     async for msg in _client.logs_from(context.message.channel, limit = amount):
       msgs.append(msg)
