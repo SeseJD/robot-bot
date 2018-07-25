@@ -22,7 +22,7 @@ async def on_message(message):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
       
 
-client.command(pass_context = True)
+client.command()
 async def clear(context, ammount=100):
   if context.message.author.id == '422126708003438592':
     msgs = []
