@@ -14,7 +14,7 @@ class Slowmode:
   def __init__(self, client):
     self.client = client
   
-  @client.listen
+  @client.listen()
   async def on_message(message):
     print('New msg')
     await client.edit_channel_permissions(message.channel, message.author, slowmodeon)
