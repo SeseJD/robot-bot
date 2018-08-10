@@ -34,7 +34,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
   if message.channel.name == 'announcements':
-    message.add_reaction('ok_hand')
+    message.add_reaction(emoji = discord.Emoji('ok_hand'))
   if message.content.startswith('{}owner'.format(prefix)):
     await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. Cheers to him!')
   if message.content.startswith('{}channelinfo'.format(prefix)):
