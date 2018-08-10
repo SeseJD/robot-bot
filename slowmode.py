@@ -6,6 +6,7 @@ import os
 import time
 
 DCclient = discord.Client()
+client = commands.Bot(command_prefix = pr)
 
 slowmodeon = discord.PermissionOverwrite(send_messages = False)
 slowmodeoff = discord.PermissionOverwrite()
