@@ -12,7 +12,8 @@ cogs = ['slowmode']
 @client.event
 async def on_ready():
   print('Bot ready!')
-  discord.Game('Bounty Hunters')
+  playing = discord.Game('Bounty Hunters')
+  await client.change_presence(status=discord.Status.online, activity = playing)
 
 if __name__ == '__main__':
   for cog in cogs:
