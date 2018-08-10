@@ -5,8 +5,6 @@ import asyncio
 import os
 import time
 
-import runner.py
-
 slowmodeon = discord.PermissionOverwrite(send_messages = False)
 slowmodeoff = discord.PermissionOverwrite()
 
