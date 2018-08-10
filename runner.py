@@ -30,7 +30,7 @@ key = {
 }
 
 directory = os.getcwd()
-os.chdir(directory)
+os.chdir(r'{}'.format(directory))
 
 @client.event
 async def on_ready():
