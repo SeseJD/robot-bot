@@ -17,6 +17,7 @@ if __name__ == '__main__':
   for cog in cogs:
     try:
       client.load_extension(cog)
+      print('Cog {} loaded'.format(cog))
     except Exception as error:
       print('Cog {} failed to load because: [{}]'.format(cog, error))
 
