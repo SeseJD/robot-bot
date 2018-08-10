@@ -7,7 +7,7 @@ import os
 pr = '_'
 client = discord.Client()
 
-cogs = [']
+cogs = ['slowmode']
 
 @client.event
 async def on_ready():
