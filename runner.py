@@ -7,13 +7,14 @@ import os
 pr = '_'
 client = commands.Bot(command_prefix = pr)
 
+playing = discord.Game('Bounty Hunters')
+
 cogs = ['slowmode']
 
 @client.event
 async def on_ready():
   print('Bot ready!')
-  playing = discord.Game('Bounty Hunters')
-  await client.change_presence(status=discord.Status.online, activity = playing)
+  await client.change_presence(activity = playing)
 
 if __name__ == '__main__':
   for cog in cogs:
