@@ -5,9 +5,6 @@ import asyncio
 import os
 import time
 
-DCclient = discord.Client()
-client = commands.Bot(command_prefix = pr)
-
 slowmodeon = discord.PermissionOverwrite(send_messages = False)
 slowmodeoff = discord.PermissionOverwrite()
 
@@ -15,11 +12,11 @@ class Slowmode:
   def __init__(self, client):
     self.client = client
   
-  @DCclient.event
+  @client.event
   async def on_message(message):
-    await DCclient.edit_channel_permissions(message.channel, message.author, slowmodeon)
+    await client.edit_channel_permissions(message.channel, message.author, slowmodeon)
     time.sleep(4)
-    await DCclient.edit_channel_permissions(message.channel, message.author, slowmodeoff)
+    await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
   
 def setup(client):
-  client.add_cog(Slowmode(client)))
+  client.add_cog(Slowmode(client))
