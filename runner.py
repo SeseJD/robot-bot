@@ -45,6 +45,6 @@ async def on_message(message):
     await client.send_message(message.channel, 'No... u')
   await client.edit_channel_permissions(message.channel, message.author, slowmode)
   time.sleep(4)
-  await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
+  await client.edit_channel_permissions(message.channel, message.author, Overwrite = None)
 
 client.run(os.getenv('BOT_TOKEN'))
