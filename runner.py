@@ -24,7 +24,6 @@ key = {
 @client.event
 async def on_ready():
   print('Bot ready!')
-  await client.send_message(468145561233784834, 'I am now updated!')
 
 
 @client.event
