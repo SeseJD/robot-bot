@@ -10,13 +10,13 @@ slowmodeoff = discord.PermissionOverwrite()
 
 class Slowmode:
   def __init__(self, client):
-    self.client = Client
+    self.client = client
   
   @client.event
   async def on_message(message):
-    await Client.edit_channel_permissions(message.channel, message.author, slowmodeon)
+    await client.edit_channel_permissions(message.channel, message.author, slowmodeon)
     time.sleep(4)
-    await Client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
+    await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
   
 def setup(Client):
-  Client.add_cog(Slowmode(Client)))
+  client.add_cog(Slowmode(client)))
