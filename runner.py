@@ -6,7 +6,7 @@ import os
 
 pr = '_'
 client = discord.Client()
-Client = commands.Bot(prefix = pr)
+Client = commands.Bot(command_prefix = pr)
 
 cogs = ['slowmode']
 
