@@ -12,7 +12,6 @@ slowmode.send_messages = False
 
 
 slowmodeoff = discord.PermissionOverwrite()
-slowmodeoff.send_messages = False
 
 prefix = '_'
 
