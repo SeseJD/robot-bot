@@ -35,6 +35,7 @@ os.chdir(directory)
 @client.event
 async def on_ready():
   print('Bot ready!')
+  print(directory)
 
 @client.event
 async def on_message(message):
