@@ -20,5 +20,5 @@ class Slowmode:
     time.sleep(4)
     await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
   
-def setup(client):
-  client.add_cog(Slowmode(client))
+def setup(Client):
+  client.add_cog(Slowmode(Client))
