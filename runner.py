@@ -29,9 +29,12 @@ key = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 async def on_ready():
   print('Bot ready!')
   print(directory)
+  await client.change_presence(game = discord.Game(name = 'Bounty Hunters'))
 
 @client.event
 async def on_message(message):
+  if message.channel.name == 'announcements':
+    message.add_reaction('ok_hand')
   if message.content.startswith('{}owner'.format(prefix)):
     await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. Cheers to him!')
   if message.content.startswith('{}channelinfo'.format(prefix)):
@@ -42,6 +45,6 @@ async def on_message(message):
     await client.send_message(message.channel, 'No... u')
   await client.edit_channel_permissions(message.channel, message.author, slowmode)
   time.sleep(4)
-  await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
+  await client.edit_channel_permissions(message.channel, message.author)
 
 client.run(os.getenv('BOT_TOKEN'))
