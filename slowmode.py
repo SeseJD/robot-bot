@@ -5,6 +5,8 @@ import asyncio
 import os
 import time
 
+client = commands.Bot(command_prefix = '_')
+
 slowmodeon = discord.PermissionOverwrite(send_messages = False)
 slowmodeoff = discord.PermissionOverwrite()
 
