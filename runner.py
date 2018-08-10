@@ -5,6 +5,14 @@ from discord.ext.commands import Bot
 import asyncio
 import os
 import random
+import time
+
+slowmode = discord.PermissionOverwrite()
+slowmode.send_messages = False
+
+
+slowmodeoff = discord.PermissionOverwrite()
+slowmodeoff.send_messages = False
 
 prefix = '_'
 
@@ -36,6 +44,10 @@ async def on_message(message):
     await client.send_message(message.channel, '{} {}'.format(random.choice(key), random.choice(key_type)))
   if message.content.startswith('no u') or message.content.startswith('No u'): or message.content.startswith('No you')
     await client.send_message(message.channel, 'No... u')
+  if message.channel.name = 'general':
+    client.edit_channel_permissions(message.channel, message.author, slowmode)
+    time.sleep(4)
+    client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
 
 
 client.run(os.getenv('BOT_TOKEN'))
