@@ -9,8 +9,8 @@ slowmodeon = discord.PermissionOverwrite(send_messages = False)
 slowmodeoff = discord.PermissionOverwrite()
 
 class Slowmode:
-  def __init__(self, Client):
-    self.client = Client
+  def __init__(self, client):
+    self.client = client
   
   @client.event
   async def on_message(message):
