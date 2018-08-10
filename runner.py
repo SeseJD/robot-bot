@@ -6,18 +6,19 @@ import os
 
 pr = '_'
 client = discord.Client()
+Client = commands.Bot(prefix = pr)
 
 cogs = ['slowmode']
 
-@client.event
+@Client.event
 async def on_ready():
   print('Bot ready!')
 
 if __name__ == '__main__':
   for cog in cogs:
     try:
-      client.load_extension(cog)
+      Client.load_extension(cog)
     except Exception as error:
       print('Cog {} failed to load because: [{}]'.format(cog, error))
 
-client.run(os.getenv('BOT_TOKEN'))
+Client.run(os.getenv('BOT_TOKEN'))
