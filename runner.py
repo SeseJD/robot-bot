@@ -33,6 +33,18 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+  if message.content.startswith('{}help'.format(prefix)):
+    await client.send_message(message.channel,"""
+    ```
+    The prefix is {}
+    
+    help - To get info about all the commands
+    info - All about me!
+    channelinfo - To get more information about this channel.
+    ranmusickey - A random music key generator
+    slowmode - All you need to know about slowmode
+    ```
+    """.format(prefix))
   if message.content.startswith('{}info'.format(prefix)):
     await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. For more info about Hunterbot, please check https://github.com/SeseJD/robot-bot')
   if message.content.startswith('{}channelinfo'.format(prefix)):
