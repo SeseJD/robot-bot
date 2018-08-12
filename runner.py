@@ -33,18 +33,18 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-  if message.channel.name == 'announcements':
-    message.add_reaction(emoji = discord.Emoji(name = 'ok_hand'))
-  if message.content.startswith('{}owner'.format(prefix)):
-    await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. Cheers to him!')
+  if message.content.startswith('{}info'.format(prefix)):
+    await client.send_message(message.channel, 'This bot was 100% created by Sese#1078. For more info about Hunterbot, please check https://github.com/SeseJD/robot-bot')
   if message.content.startswith('{}channelinfo'.format(prefix)):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
   if message.content.startswith('{}ranmusickey'.format(prefix)):
     await client.send_message(message.channel, '{} {}'.format(random.choice(key), random.choice(key_type)))
+  if message.content.startswith('{}slowmode'.format(prefix)):
+    await client.send_message(message.channel, 'This server uses a 5 second **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after the 5 seconds.')
   if message.content.startswith('no u') or message.content.startswith('No u') or message.content.startswith('No you'):
     await client.send_message(message.channel, 'No... u')
   await client.edit_channel_permissions(message.channel, message.author, slowmode)
-  time.sleep(4)
+  time.sleep(5)
   await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
 
 client.run(os.getenv('BOT_TOKEN'))
