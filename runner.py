@@ -60,6 +60,6 @@ async def on_message(message):
     time.sleep(2)
     await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
   except:
-    
+    print('slowmode disabled :(')
 
 client.run(os.getenv('BOT_TOKEN'))
