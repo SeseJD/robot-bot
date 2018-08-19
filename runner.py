@@ -55,7 +55,7 @@ async def on_message(message):
     await client.send_message(message.channel, 'This server uses a 5 second **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after the 5 seconds.')
   if message.content.startswith('no u') or message.content.startswith('No u') or message.content.startswith('No you'):
     await client.send_message(message.channel, 'No... u')
-  try
+  try:
     await client.edit_channel_permissions(message.channel, message.author, slowmode)
     time.sleep(5)
     await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
