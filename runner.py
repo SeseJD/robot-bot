@@ -28,7 +28,6 @@ key = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 @client.event
 async def on_ready():
   print('Bot ready!')
-  print(directory)
   await client.change_presence(game = discord.Game(name = 'Bounty Hunters'))
 
 @client.event
