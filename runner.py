@@ -54,7 +54,7 @@ async def on_message(message):
     await client.send_message(message.channel, '{} {}'.format(random.choice(key), random.choice(key_type)))
   if message.content.startswith('{}freeze'.format(prefix)):
     if message.author.id == '422126708003438592':
-      msgLen = len(msg = '{}freeze'.format(prefix))
+      msgLen = len('{}freeze'.format(prefix))
       tim = message.content[msgLen + 1:]
       try:
         sm = int(tim)
