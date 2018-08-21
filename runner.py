@@ -57,7 +57,7 @@ async def on_message(message):
       msgLen = len('{}freeze'.format(prefix))
       tim = message.content[msgLen + 1:]
       try:
-        sm = tim
+        sm = int(tim)
         await client.send_message(message.channel, ':ok_hand: Setting a new slowmode to {}'.format(tim))
       except:
         await client.send_message(message.channel, ':( failed')
@@ -68,7 +68,7 @@ async def on_message(message):
   if message.author.id != '470678875945435136':
     try:
       await client.edit_channel_permissions(message.channel, message.author, slowmode)
-      time.sleep(int(sm))
+      time.sleep(sm)
       await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
     except:
       print('slowmode disabled :(')
