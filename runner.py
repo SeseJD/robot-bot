@@ -62,10 +62,10 @@ async def on_message(message):
       except:
         await client.send_message(message.channel, ':( failed')
   if message.content.startswith('{}slowmode'.format(prefix)):
-    await client.send_message(message.channel, 'This server uses a {} second **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after the {} second(s).'.format(sm, sm))
+    await client.send_message(message.channel, 'This server uses **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after\.')
   if message.content.startswith('no u') or message.content.startswith('No u') or message.content.startswith('No you'):
     await client.send_message(message.channel, 'No... u')
-  if message.author.id != 470678875945435136:
+  if message.author.id != '470678875945435136':
     try:
       await client.edit_channel_permissions(message.channel, message.author, slowmode)
       time.sleep(int(sm))
