@@ -60,7 +60,7 @@ async def on_message(message):
         sm = int(tim)
         await client.send_message(message.channel, ':ok_hand: Setting a new slowmode to {}'.format(tim))
       except:
-      await client.send_message(message.channel, ':( failed')
+        await client.send_message(message.channel, ':( failed')
   if message.content.startswith('{}slowmode'.format(prefix)):
     await client.send_message(message.channel, 'This server uses a {} second **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after the {} second(s).'.format(sm, sm))
   if message.content.startswith('no u') or message.content.startswith('No u') or message.content.startswith('No you'):
