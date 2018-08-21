@@ -68,7 +68,7 @@ async def on_message(message):
   if message.author.id != '470678875945435136':
     try:
       await client.edit_channel_permissions(message.channel, message.author, slowmode)
-      time.sleep(sm)
+      time.sleep(2)
       await client.edit_channel_permissions(message.channel, message.author, slowmodeoff)
     except:
       print('slowmode disabled :(')
