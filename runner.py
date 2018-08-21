@@ -8,6 +8,8 @@ import os
 import random
 import time
 
+sm = 2
+
 slowmode = discord.PermissionOverwrite()
 slowmode.send_messages = False
 
@@ -50,8 +52,17 @@ async def on_message(message):
     await client.send_message(message.channel, '```{}```'.format(message.channel.topic))
   if message.content.startswith('{}ranmusickey'.format(prefix)):
     await client.send_message(message.channel, '{} {}'.format(random.choice(key), random.choice(key_type)))
+  if message.content.startswith('{}freeze'.format(prefix)):
+    if message.author.id == '422126708003438592':
+      msgLen = len(msg = '{}freeze'.format(prefix))
+      tim = message.content[msgLen + 1:]
+      try:
+        sm = int(tim)
+        await client.send_message(message.channel, ':ok_hand: Setting a new slowmode to {}'.format(tim))
+      except:
+      await client.send_message(message.channel, ':( failed')
   if message.content.startswith('{}slowmode'.format(prefix)):
-    await client.send_message(message.channel, 'This server uses a 2 second **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after the 2 seconds.')
+    await client.send_message(message.channel, 'This server uses a {} second **slowmode** for every channel. It will temporarily mute you from the specific channel then unmute after the {} second(s).'.format(sm, sm))
   if message.content.startswith('no u') or message.content.startswith('No u') or message.content.startswith('No you'):
     await client.send_message(message.channel, 'No... u')
   try:
